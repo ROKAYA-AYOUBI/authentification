@@ -1,6 +1,5 @@
 package com.example.authentificationapi.models;
 
-
 import javax.persistence.*;
 
 @Entity

@@ -1,4 +1,4 @@
-package com.example.authentificationapi.request;
+package com.example.authentificationapi.payload.request;
 
 
 import java.util.Set;

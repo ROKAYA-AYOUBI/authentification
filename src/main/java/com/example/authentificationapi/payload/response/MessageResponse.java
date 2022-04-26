@@ -1,4 +1,4 @@
-package com.example.authentificationapi.response;
+package com.example.authentificationapi.payload.response;
 
 public class MessageResponse {
     private String message;
