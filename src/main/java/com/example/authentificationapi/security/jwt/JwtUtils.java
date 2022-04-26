@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 
 import io.jsonwebtoken.*;
 
-
+//We will define the utilities method for generating and validating JWT token.
 @Component
 public class JwtUtils {
 

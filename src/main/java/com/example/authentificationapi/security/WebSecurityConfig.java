@@ -22,9 +22,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 
-
+//Cette classe étend le WebSecurityConfigurerAdapter qui permet de personnaliser à la fois WebSecurity et HTTPSecurity.
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity //permet à Spring de trouver et d'appliquer automatiquement la classe à la sécurité Web globale.
 @EnableGlobalMethodSecurity(
         prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

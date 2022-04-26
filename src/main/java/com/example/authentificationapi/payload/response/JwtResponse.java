@@ -3,6 +3,7 @@ package com.example.authentificationapi.payload.response;
 
 import java.util.List;
 
+//JwtResponse utilisé pour créer l'objet de réponse envoyé au client.
 
 public class JwtResponse {
     private String token;

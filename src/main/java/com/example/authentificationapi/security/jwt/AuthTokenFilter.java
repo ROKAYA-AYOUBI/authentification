@@ -19,7 +19,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
-
+/*
+La classe JwtRequestFilter est exécutée pour toutes les requêtes entrantes et valide JWT
+à partir de la requête et la définit dans le contexte pour indiquer que l'utilisateur connecté est authentifié.
+ */
 public class AuthTokenFilter extends OncePerRequestFilter {
     @Autowired
     private JwtUtils jwtUtils;

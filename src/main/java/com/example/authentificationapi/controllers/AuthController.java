@@ -35,6 +35,8 @@ import com.example.authentificationapi.payload.response.MessageResponse;
 import com.example.authentificationapi.security.jwt.JwtUtils;
 import com.example.authentificationapi.security.services.UserDetailsImpl;
 
+//mettre à jour la méthode pour  signin avec le Token d'actualisation
+//exposer l'API POST pour créer un nouveau Token  d'accès à partir du Token d'actualisation reçu
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -90,8 +92,12 @@ public class AuthController {
         }
 
         // Create new user's account
+
+
         User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
+
+
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();

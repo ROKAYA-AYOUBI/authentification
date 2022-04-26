@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
-@RestControllerAdvice
+@RestControllerAdvice  //pour la gestion des exceptions dans l'API Restful.
 public class TokenControllerAdvice {
 
     @ExceptionHandler(value = TokenRefreshException.class)

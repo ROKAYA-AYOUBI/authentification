@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-
+//This class rejects unauthenticated request and send error code 401
 @Component
 public class AuthEntryPointJwt implements AuthenticationEntryPoint {
 

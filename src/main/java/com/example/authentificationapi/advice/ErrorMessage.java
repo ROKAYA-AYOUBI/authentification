@@ -2,6 +2,8 @@ package com.example.authentificationapi.advice;
 
 import java.util.Date;
 
+
+//Modèle d'erreur pour interagir avec le client.
 public class ErrorMessage {
 
     private int statusCode;

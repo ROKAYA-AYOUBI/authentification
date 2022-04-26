@@ -2,6 +2,8 @@ package com.example.authentificationapi.models;
 
 import java.time.Instant;
 import javax.persistence.*;
+
+//Cette classe a une relation  one-to-one  avec la classe User.
 @Entity(name = "refreshtoken")
 public class RefreshToken {
     @Id
