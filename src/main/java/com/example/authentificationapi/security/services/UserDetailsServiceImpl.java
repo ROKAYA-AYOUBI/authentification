@@ -11,8 +11,6 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.management.relation.Role;
-import java.util.List;
 
 /*UserDetailsService interface is used in order to search the username,
 password and GrantedAuthorities for given user.

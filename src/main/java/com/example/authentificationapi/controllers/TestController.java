@@ -19,15 +19,16 @@ public class TestController {
     UserRepository userRepository;
 
 //affiche tout les users
-    @GetMapping(value="/all")
+    @GetMapping(value="/users")
     public List listUser(){
         return userRepository.findAll();
     }
-// affiche par id
+  // affiche par id
     @GetMapping(value="/users/{id}")
    public  User listusers(@PathVariable(name="id") Long id){
         return userRepository.findById(id).get();
     }
+
     // delete user par id
     // @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping(value = "/users/{id}")
@@ -36,7 +37,7 @@ public class TestController {
     }
 
 //update user
-    
+
     // @PreAuthorize("hasRole('ADMIN')")
     @PutMapping(value="/users/{id}")
     public User update(@PathVariable(name="id")Long id , @RequestBody User user ){
@@ -44,15 +45,13 @@ public class TestController {
         return userRepository.save(user);
 
     }
-
 /*
-   // @PreAuthorize("hasRole('ADMIN')")
-    @RequestMapping(value="/users/{id}", method = RequestMethod.DELETE)
-    public User deleteUser(@PathVariable(value = "id") Long id){
-        userRepository.delete(id);
-        return new User(id);
+    //cree user detail
+    @PostMapping(value="/users")
+    public User save(@RequestBody User user ){
+        return userRepository.save(user);
     }
-*/
+ */
 
 
 
