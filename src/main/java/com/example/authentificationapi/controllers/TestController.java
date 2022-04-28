@@ -2,13 +2,20 @@ package com.example.authentificationapi.controllers;
 
 
 import com.example.authentificationapi.models.User;
+import com.example.authentificationapi.repository.RoleRepository;
 import com.example.authentificationapi.repository.UserRepository;
+import com.example.authentificationapi.security.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.management.relation.Role;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -17,12 +24,24 @@ public class TestController {
 
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    RoleRepository roleRepository;
 
 //affiche tout les users
+
     @GetMapping(value="/users")
     public List listUser(){
         return userRepository.findAll();
     }
+    @GetMapping(value="/users/{id}/role")
+    public List listRole(){
+        return roleRepository.findAll();
+    }
+
+
+
+
+
   // affiche par id
     @GetMapping(value="/users/{id}")
    public  User listusers(@PathVariable(name="id") Long id){
@@ -45,13 +64,6 @@ public class TestController {
         return userRepository.save(user);
 
     }
-/*
-    //cree user detail
-    @PostMapping(value="/users")
-    public User save(@RequestBody User user ){
-        return userRepository.save(user);
-    }
- */
 
 
 
