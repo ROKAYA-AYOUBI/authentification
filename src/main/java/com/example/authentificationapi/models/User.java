@@ -2,6 +2,7 @@ package com.example.authentificationapi.models;
 
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -52,6 +53,7 @@ public class User {
     public User(Long id) {
     }
 
+
     public Long getId() {
         return id;
     }
@@ -91,5 +93,7 @@ public class User {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
+
+
 }
 

@@ -1,6 +1,9 @@
 package com.example.authentificationapi.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "roles")
@@ -12,6 +15,9 @@ public class Role {
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
     private ERole name;
+
+
+
 
     public Role() {
 
@@ -36,4 +42,7 @@ public class Role {
     public void setName(ERole name) {
         this.name = name;
     }
+
+
+
 }

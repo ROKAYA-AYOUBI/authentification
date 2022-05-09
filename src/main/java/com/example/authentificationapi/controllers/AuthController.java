@@ -2,14 +2,14 @@ package com.example.authentificationapi.controllers;
 
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
 import com.example.authentificationapi.exception.TokenRefreshException;
-import com.example.authentificationapi.payload.request.LogOutRequest;
-import com.example.authentificationapi.payload.request.TokenRefreshRequest;
+import com.example.authentificationapi.payload.request.*;
 import com.example.authentificationapi.payload.response.TokenRefreshResponse;
 import com.example.authentificationapi.security.services.RefreshTokenService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +19,17 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.authentificationapi.models.*;
 import com.example.authentificationapi.repository.RoleRepository;
 import com.example.authentificationapi.repository.UserRepository;
-import com.example.authentificationapi.payload.request.LoginRequest;
-import com.example.authentificationapi.payload.request.SignupRequest;
 import com.example.authentificationapi.payload.response.JwtResponse;
 import com.example.authentificationapi.payload.response.MessageResponse;
 import com.example.authentificationapi.security.jwt.JwtUtils;
 import com.example.authentificationapi.security.services.UserDetailsImpl;
+
+
 
 //mettre à jour la méthode pour  signin avec le Token d'actualisation
 //exposer l'API POST pour créer un nouveau Token  d'accès à partir du Token d'actualisation reçu
@@ -92,12 +88,8 @@ public class AuthController {
         }
 
         // Create new user's account
-
-
         User user = new User(signUpRequest.getUsername(), signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
-
-
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();

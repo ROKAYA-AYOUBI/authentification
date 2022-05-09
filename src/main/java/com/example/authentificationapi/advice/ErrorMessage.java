@@ -4,8 +4,8 @@ import java.util.Date;
 
 
 //Modèle d'erreur pour interagir avec le client.
-public class ErrorMessage {
 
+public class ErrorMessage {
     private int statusCode;
     private Date timestamp;
     private String message;
